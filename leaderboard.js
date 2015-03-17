@@ -60,6 +60,10 @@ if (Meteor.isClient) {
         }
     });
 
+    Template.search.rendered = function () {
+        $('input').focus();
+    };
+
     Template.search.events({
         'input #name': function () {
             skp = 0;
