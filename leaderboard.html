@@ -1,0 +1,47 @@
+<head>
+    <title>Famous people</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    {{> outer}}
+</body>
+
+<template name="outer">
+<div class="outer">
+    <div class="logo"></div>
+    <h1 class="title">Famous people</h1>
+
+    {{> search}}
+    {{> leaderboard}}
+</div>
+</template>
+
+<template name="search">
+    <label class="search">Search: <input id="name"> </label>
+</template>
+
+<template name="leaderboard">
+    <ol class="leaderboard">
+        {{#each people}}
+            {{> person}}
+        {{/each}}
+    </ol>
+
+    {{#if selectedName}}
+        <div class="details">
+            <div class="name">{{selectedName}}</div>
+            <button class="inc">+1</button>
+        </div>
+    {{else}}
+        <div class="message">Click a person to select</div>
+    {{/if}}
+</template>
+
+<template name="person">
+    <li class="player {{selected}}">
+        <span class="name">{{name}}</span>
+        <span class="score">{{score}}</span>
+    </li>
+</template>
