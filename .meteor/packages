@@ -7,7 +7,6 @@
 insecure
 meteor-platform
 
-foundation
 webapp
 mrt:pagination
 alethes:pages
